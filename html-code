@@ -1,0 +1,31 @@
+<footer>
+  <div class="container">
+    <form id="feedback-form" action="{{ route('submit-feedback') }}" method="POST">
+        
+        @csrf <label class="labelfooter" for="yourname">Your Name..</label>
+        <input class="inputfooter" type="text" id="User_Name" name="firstname" placeholder="Your Name..">
+      
+        <label class="labelfooter" for="email">E-mail..</label>
+        <input class="inputfooter" type="text" id="User_email" name="email" placeholder="E-mail..">
+      
+        <label class="labelfooter" for="subject">Subject</label>
+        <select class="inputfooter" id="User_Subject" name="subject">
+            <option class="option1" value="Movie Request">Movie Request</option>
+            <option class="option1" value="Broken Link">Broken Link</option>
+            <option class="option1" value="Complaint">Complaint</option>
+            <option class="option1" value="Error/Bug Complaint">Error/Bug Complaint</option>
+        </select>
+      
+        <label class="labelfooter" for="message">Message</label>
+        <textarea class="inputfooter" id="User_Message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+      
+        <input type="submit" id="submit-btn" value="Submit">
+    </form>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+</div>
+
+</footer>
